@@ -1,16 +1,70 @@
-# manage_hive
+# ManageHive Frontend
 
-A new Flutter project.
+A **Flutter** application that serves as the frontend for the ManageHive system.  
+This repo targets **web** and communicates with the Java/Spring Boot backend via REST APIs.
 
-## Getting Started
+> Backend repo: **ManageHive Backend** → https://github.com/sdas204221/ManageHiveBackend
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter 3.x (stable channel)**
+- **Dart**
+- **Material Design**
+- HTTP client for REST calls
+- Supports **Web**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Project Structure
+
+```
+lib/
+  main.dart
+  # (add your layers as you grow the app)
+  # screens/       -> UI pages
+  # widgets/       -> reusable UI components
+  # services/      -> API clients
+  # models/        -> data models
+  # utils/         -> helpers, formatters
+
+web/               # web runner (index.html, etc.)
+```
+
+---
+
+## Prerequisites
+
+- Flutter SDK installed (3.x, stable)  
+  ```bash
+  flutter --version
+  flutter doctor
+  ```
+- **Chrome**.
+
+---
+
+## Run Locally
+
+1) Get packages
+```bash
+flutter pub get
+```
+
+2) Start for **Web**
+```bash
+flutter run -d chrome
+```
+
+---
+
+## Related Repositories
+
+- **Backend (Java/Spring Boot):** https://github.com/sdas204221/ManageHiveBackend
+
+---
+
+## Author
+
+**Subhra Das** — https://github.com/sdas204221
