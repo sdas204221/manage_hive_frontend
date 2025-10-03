@@ -174,6 +174,24 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: const Text('Home'),
           actions: [
+            IconButton(
+              icon: const Icon(Icons.contacts),
+              onPressed: () {
+                if (context.mounted) {
+                  context.go('/customers');
+                }
+              },
+              tooltip: 'Customers',
+            ),
+            IconButton(
+              icon: const Icon(Icons.inventory_2),
+              onPressed: () {
+                if (context.mounted) {
+                  context.go('/products');
+                }
+              },
+              tooltip: 'Products',
+            ),
             isReportDownloading
                 ? const CircularProgressIndicator()
                 : IconButton(
@@ -287,14 +305,17 @@ class _NarrowLayout extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Column(
-        children:  [
+        children: [
           TabBar(tabs: [Tab(text: 'Add Invoice'), Tab(text: 'Invoices')]),
           Expanded(
             child: TabBarView(
-              children: [FocusTraversalGroup(
-          policy: OrderedTraversalPolicy(),
-          child: InvoiceFormScreen(),
-        ), InvoiceListScreen()],
+              children: [
+                FocusTraversalGroup(
+                  policy: OrderedTraversalPolicy(),
+                  child: InvoiceFormScreen(),
+                ),
+                InvoiceListScreen(),
+              ],
             ),
           ),
         ],
@@ -319,9 +340,9 @@ class _WideLayout extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: FocusTraversalGroup(
-          policy: OrderedTraversalPolicy(),
-          child: InvoiceFormScreen(),
-        ),
+              policy: OrderedTraversalPolicy(),
+              child: InvoiceFormScreen(),
+            ),
           ),
         ),
         ConstrainedBox(
